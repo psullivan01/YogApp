@@ -61,59 +61,71 @@ $(function() {
     $("#result").append("<button type='submit' class='btn btn-primary' id='confirm'>Continue</button>");
 
     $("#confirm").click(function() {
-      $(".container").empty();
+      $("#topDiv").empty();
       $("#topDiv").append("<button type='submit' class='btn btn-primary' id='reload'>Go Back</button>");
       $("#reload").click(function() {
         location.reload();
       });
 
-      function displayTimer(time) {
-        var timer = time, minutes, seconds;
+      function displayTime(totalSeconds) {
+        $("#time").empty();
 
-        setInterval(function() {
+        var minutes = Math.floor(totalSeconds / 60);
+        var seconds = totalSeconds % 60;
 
-          minutes = Math.floor(time);
-          seconds = (time % 1) * 60;
+        if (seconds < 10) {
+          seconds = '0' + seconds;
+        }
 
-          minutes = minutes < 10 ? "0" + minutes : minutes;
-          seconds = seconds < 10 ? "0" + seconds : seconds;
+        $("#time").append(minutes + ":" + seconds);
+        totalSeconds--;
 
-          $("#time").append(minutes + ":" + seconds);
-
-          if (--timer < 0) {
-            timer = time
-          }
-        }, 1000);
+        if (totalSeconds > 0) {
+          setTimeout(function() {
+            $("#time").empty();
+            displayTime(totalSeconds);
+          }, 1000);
+        }
       }
 
       function displayPoses(time, pose) {
         var move = pose.pop();
+        var totalSeconds = time * 60;
 
         if (move === "Lizard") {
-          $("#poses").append("<img src='img/lizard.jpg'></img>");
+          $("#poses").append("<img class='img-responsive center-block' src='img/lizard.jpg'></img>");
+          $("#move").append(move);
         } else if (move === "Saddle") {
-          $("#poses").append("<img src='img/saddle.png'></img>");
+          $("#poses").append("<img class='img-responsive center-block' src='img/saddle.png'></img>");
+          $("#move").append(move);
         } else if (move === "Seated Forward Fold") {
-          $("#poses").append("<img src='img/seated_forward_fold.jpg'></img>");
+          $("#poses").append("<img class='img-responsive center-block' src='img/seated_forward_fold.jpg'></img>");
+          $("#move").append(move);
         } else if (move === "Standing Straddle") {
-          $("#poses").append("<img src='img/standing_straddle.jpg'></img>");
+          $("#poses").append("<img class='img-responsive center-block' src='img/standing_straddle.jpg'></img>");
+          $("#move").append(move);
         } else if (move === "Pigeon") {
-          $("#poses").append("<img src='img/pigeon.jpg'></img>");
+          $("#poses").append("<img class='img-responsive center-block' src='img/pigeon.jpg'></img>");
+          $("#move").append(move);
         } else if (move === "Seated Cross Shin") {
-          $("#poses").append("<img src='img/seated_cross_shin.jpg'></img>");
+          $("#poses").append("<img class='img-responsive center-block' src='img/seated_cross_shin.jpg'></img>");
+          $("#move").append(move);
         } else if (move === "Single Leg Forward Fold") {
-          $("#poses").append("<img src='img/single_leg_forward_fold.png'></img>");
+          $("#poses").append("<img class='img-responsive center-block' src='img/single_leg_forward_fold.png'></img>");
+          $("#move").append(move);
         } else if (move === "Puppy Dog") {
-          $("#poses").append("<img src='img/puppy_dog.jpg'></img>");
+          $("#poses").append("<img class='img-responsive center-block' src='img/puppy_dog.jpg'></img>");
+          $("#move").append(move);
         }
 
-        displayTimer(time);
+        displayTime(totalSeconds);
 
         if (pose.length) {
           setTimeout(function() {
             $("#poses").empty();
+            $("#move").empty();
             displayPoses(time, pose);
-          }, time * 60000)
+          }, time * 60000);
         }
       }
 
