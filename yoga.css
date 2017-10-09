@@ -1,3 +1,45 @@
+body {
+  background-color: #EAEAEA;
+  font-family: helvetica, ariel, sans-serif;
+}
+
+header {
+  line-height: 3em;
+  position: relative;
+  background-color: #494949;
+  text-align: center;
+  width: 100%;
+  top: 0;
+  padding-top: 5px;
+  padding-bottom: 15px;
+  color: #EAEAEA;
+}
+header h1 {
+  font-size: 48px;
+}
+header h2 {
+  font-size: 18px;
+}
+nav {
+  position: absolute;
+  background-color: #7f7f7f;
+  text-align: center;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+}
+nav a {
+  color: #EAEAEA;
+  padding-right: 20px;
+}
+nav a:hover {
+  color: #2c3e50;
+}
+.container{
+  padding-top: 100px;
+}
+
 #select {
   width: 100px;
 }
@@ -11,9 +53,5 @@
 }
 
 #reload {
-  margin-top: 25px;
-}
-
-#topDiv {
   margin-top: 25px;
 }
