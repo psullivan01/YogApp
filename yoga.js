@@ -1,15 +1,18 @@
 
-var poses = {quads:["Saddle", "Lizard"],
-  hamstrings:["Seated Forward Fold", "Standing Straddle"],
-  hips:["Pigeon", "Seated Cross Shin"],
-  lowerBack:["Single Leg Forward Fold", "Puppy Dog"]};
+var poses = {quads:["Saddle", "Lizard", "Half Saddle", "Twisted Lizard"],
+  hamstrings:["Seated Forward Fold", "Standing Straddle", "Half Front Split", "Dragon"],
+  hips:["Pigeon", "Seated Cross Shin", "Bound Angle"],
+  lowerBack:["Single Leg Forward Fold", "Puppy Dog", "Single Leg Forward Fold with QLT", "Sphinx"],
+  upperBack:["Saddle Eagle", "Saddle Archer", "Standing Forward Fold with Interlacing Fingers"],
+  shoulders:["Child's Pose with Shoulders", "Twisted Cross", "Thread the Needle"],
+};
 
 $(function() {
   $("#yoga-form").submit(function(e) {
     e.preventDefault();
   });
 
-  var contents = {duration:10, muscle:[]};
+  var contents = {"duration":10, "muscle":[]};
 // when the user clicks submit...
   $("#submission").click(function() {
 // Add the selected time into the contents object
@@ -30,6 +33,12 @@ $(function() {
     if ($("#inlineCheckbox4").is(":checked")) {
       contents.muscle.push($("#inlineCheckbox4").attr('value'))
     }
+    if ($("#inlineCheckbox5").is(":checked")) {
+      contents.muscle.push($("#inlineCheckbox5").attr('value'))
+    }
+    if ($("#inlineCheckbox6").is(":checked")) {
+      contents.muscle.push($("#inlineCheckbox6").attr('value'))
+    }
 
     console.log(contents);
 // Generate the workout options and duration for each
@@ -38,13 +47,9 @@ $(function() {
 
     for (var i = 0; i < contents.muscle.length; i++) {
 // Generate random pose assigner
-      if (Math.random() < .5) {
-        var selector = 0;
-      } else {
-        var selector = 1;
-      }
-
       var muscle = contents.muscle[i];
+      var muscleArrayLength = poses[muscle].length
+      var selector = Math.floor(Math.random() * muscleArrayLength)
       selection.pose.push(poses[muscle][selector]);
     }
 
@@ -88,6 +93,7 @@ $(function() {
         }
       }
 
+// Display Poses on given interval
       function displayPoses(time, pose) {
         var move = pose.pop();
         var totalSeconds = time * 60;
