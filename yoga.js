@@ -1,15 +1,11 @@
 
-var poses = {quads:["Saddle", "Lizard"],
-  hamstrings:["Seated Forward Fold", "Standing Straddle"],
-  hips:["Pigeon", "Seated Cross Shin"],
-  lowerBack:["Single Leg Forward Fold", "Puppy Dog"]};
 
 $(function() {
   $("#yoga-form").submit(function(e) {
     e.preventDefault();
   });
 
-  var contents = {duration:10, muscle:[]};
+  var contents = {"duration":10, "muscle":[]};
 // when the user clicks submit...
   $("#submission").click(function() {
 // Add the selected time into the contents object
@@ -30,21 +26,24 @@ $(function() {
     if ($("#inlineCheckbox4").is(":checked")) {
       contents.muscle.push($("#inlineCheckbox4").attr('value'))
     }
+    if ($("#inlineCheckbox5").is(":checked")) {
+      contents.muscle.push($("#inlineCheckbox5").attr('value'))
+    }
+    if ($("#inlineCheckbox6").is(":checked")) {
+      contents.muscle.push($("#inlineCheckbox6").attr('value'))
+    }
 
     console.log(contents);
 // Generate the workout options and duration for each
+
     var poseTime = contents.duration / contents.muscle.length;
     var selection = {time:poseTime, pose:[]}
 
     for (var i = 0; i < contents.muscle.length; i++) {
 // Generate random pose assigner
-      if (Math.random() < .5) {
-        var selector = 0;
-      } else {
-        var selector = 1;
-      }
-
       var muscle = contents.muscle[i];
+      var muscleArrayLength = poses[muscle].length
+      var selector = Math.floor(Math.random() * muscleArrayLength)
       selection.pose.push(poses[muscle][selector]);
     }
 
@@ -88,35 +87,15 @@ $(function() {
         }
       }
 
+// Display Poses on given interval
       function displayPoses(time, pose) {
         var move = pose.pop();
         var totalSeconds = time * 60;
 
-        if (move === "Lizard") {
-          $("#poses").append("<img class='img-responsive center-block' src='img/lizard.jpg'></img>");
-          $("#move").append(move);
-        } else if (move === "Saddle") {
-          $("#poses").append("<img class='img-responsive center-block' src='img/saddle.png'></img>");
-          $("#move").append(move);
-        } else if (move === "Seated Forward Fold") {
-          $("#poses").append("<img class='img-responsive center-block' src='img/seated_forward_fold.jpg'></img>");
-          $("#move").append(move);
-        } else if (move === "Standing Straddle") {
-          $("#poses").append("<img class='img-responsive center-block' src='img/standing_straddle.jpg'></img>");
-          $("#move").append(move);
-        } else if (move === "Pigeon") {
-          $("#poses").append("<img class='img-responsive center-block' src='img/pigeon.jpg'></img>");
-          $("#move").append(move);
-        } else if (move === "Seated Cross Shin") {
-          $("#poses").append("<img class='img-responsive center-block' src='img/seated_cross_shin.jpg'></img>");
-          $("#move").append(move);
-        } else if (move === "Single Leg Forward Fold") {
-          $("#poses").append("<img class='img-responsive center-block' src='img/single_leg_forward_fold.png'></img>");
-          $("#move").append(move);
-        } else if (move === "Puppy Dog") {
-          $("#poses").append("<img class='img-responsive center-block' src='img/puppy_dog.jpg'></img>");
-          $("#move").append(move);
-        }
+        console.log(links[move]);
+
+        $("#poses").append("<img class='img-responsive center-block' src='" + links[move] + "'></img>");
+        $("#move").append(move);
 
         displayTime(totalSeconds);
 
