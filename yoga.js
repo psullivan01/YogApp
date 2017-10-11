@@ -1,11 +1,4 @@
 
-var poses = {quads:["Saddle", "Lizard", "Half Saddle", "Twisted Lizard"],
-  hamstrings:["Seated Forward Fold", "Standing Straddle", "Half Front Split", "Dragon"],
-  hips:["Pigeon", "Seated Cross Shin", "Bound Angle"],
-  lowerBack:["Single Leg Forward Fold", "Puppy Dog", "Single Leg Forward Fold with QLT", "Sphinx"],
-  upperBack:["Saddle Eagle", "Saddle Archer", "Standing Forward Fold with Interlacing Fingers"],
-  shoulders:["Child's Pose with Shoulders", "Twisted Cross", "Thread the Needle"],
-};
 
 $(function() {
   $("#yoga-form").submit(function(e) {
