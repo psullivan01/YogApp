@@ -94,7 +94,7 @@ $(function() {
 
         console.log(links[move]);
 
-        $("#poses").append("<img class='img-responsive center-block' src='" + links[move] +"'></img>");
+        $("#poses").append("<img class='img-responsive center-block' src='" + links[move] + "'></img>");
         $("#move").append(move);
 
         displayTime(totalSeconds);
