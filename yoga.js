@@ -35,6 +35,7 @@ $(function() {
 
     console.log(contents);
 // Generate the workout options and duration for each
+
     var poseTime = contents.duration / contents.muscle.length;
     var selection = {time:poseTime, pose:[]}
 
@@ -91,31 +92,10 @@ $(function() {
         var move = pose.pop();
         var totalSeconds = time * 60;
 
-        if (move === "Lizard") {
-          $("#poses").append("<img class='img-responsive center-block' src='img/lizard.jpg'></img>");
-          $("#move").append(move);
-        } else if (move === "Saddle") {
-          $("#poses").append("<img class='img-responsive center-block' src='img/saddle.png'></img>");
-          $("#move").append(move);
-        } else if (move === "Seated Forward Fold") {
-          $("#poses").append("<img class='img-responsive center-block' src='img/seated_forward_fold.jpg'></img>");
-          $("#move").append(move);
-        } else if (move === "Standing Straddle") {
-          $("#poses").append("<img class='img-responsive center-block' src='img/standing_straddle.jpg'></img>");
-          $("#move").append(move);
-        } else if (move === "Pigeon") {
-          $("#poses").append("<img class='img-responsive center-block' src='img/pigeon.jpg'></img>");
-          $("#move").append(move);
-        } else if (move === "Seated Cross Shin") {
-          $("#poses").append("<img class='img-responsive center-block' src='img/seated_cross_shin.jpg'></img>");
-          $("#move").append(move);
-        } else if (move === "Single Leg Forward Fold") {
-          $("#poses").append("<img class='img-responsive center-block' src='img/single_leg_forward_fold.png'></img>");
-          $("#move").append(move);
-        } else if (move === "Puppy Dog") {
-          $("#poses").append("<img class='img-responsive center-block' src='img/puppy_dog.jpg'></img>");
-          $("#move").append(move);
-        }
+        console.log(links[move]);
+
+        $("#poses").append("<img class='img-responsive center-block' src='" + links[move] +"'></img>");
+        $("#move").append(move);
 
         displayTime(totalSeconds);
 
