@@ -1,12 +1,14 @@
 body {
-  background-color: #EAEAEA;
+  background-color: #d8d8d8;
+  width:100%;
+  /*background-color: #EAEAEA;*/
   font-family: helvetica, ariel, sans-serif;
 }
 
 header {
   line-height: 3em;
   position: relative;
-  background-color: #494949;
+  background-color: #1d7ee0;
   text-align: center;
   width: 100%;
   top: 0;
@@ -22,7 +24,7 @@ header h2 {
 }
 nav {
   position: absolute;
-  background-color: #7f7f7f;
+  background-color: #606060;
   text-align: center;
   width: 100%;
   padding-top: 15px;
@@ -39,17 +41,42 @@ nav a:hover {
 .container{
   padding-top: 100px;
 }
+.submitNav {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.durationText {
+  font-size:20px;
+}
+
+.cardStyle {
+  border-radius: 10px;
+  border: 0px;
+}
+
+.card-block {
+text-align: center;
+}
+
+.addButton {
+  padding-bottom: 5px;
+}
 
 #select {
   width: 100px;
+  height: 25px;
 }
 
 #yoga-form {
   padding-bottom: 25px;
 }
-
+.submitButton {
+  text-align: center;
+  padding-top: 25px;
+}
 #submission {
-  margin-top: 15px;
+
 }
 
 #reload {
