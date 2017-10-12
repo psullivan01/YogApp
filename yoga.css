@@ -1,28 +1,32 @@
 body {
-  background-color: #EAEAEA;
-  font-family: helvetica, ariel, sans-serif;
+  /*background-color: #d8d8d8;*/
+  width:100%;
+  /*background-color: #EAEAEA;*/
+  font-family: Ayuthaya, ariel, sans-serif;
+  background-image: url(http://sf.co.ua/2012/wallpaper-2077534.jpg);
 }
 
 header {
-  line-height: 3em;
+  line-height: 2em;
   position: relative;
-  background-color: #494949;
+  background-color: #ffffff;
   text-align: center;
   width: 100%;
   top: 0;
   padding-top: 5px;
   padding-bottom: 15px;
-  color: #EAEAEA;
+  color: #262626;
 }
 header h1 {
   font-size: 48px;
 }
 header h2 {
-  font-size: 18px;
+  padding-top: 10px;
+  font-size: 22px;
 }
 nav {
   position: absolute;
-  background-color: #7f7f7f;
+  background-color: #262626;
   text-align: center;
   width: 100%;
   padding-top: 15px;
@@ -37,19 +41,49 @@ nav a:hover {
   color: #2c3e50;
 }
 .container{
-  padding-top: 100px;
+  padding-top: 80px;
+}
+.submitNav {
+  text-align: center;
+  padding-bottom: 20px;
 }
 
+.durationText {
+  font-size:20px;
+}
+
+.cardStyle {
+  border-radius: 10px;
+  border: 0px;
+}
+.card-title {
+  font-size: 20px;
+}
+.card-block {
+text-align: center;
+}
+
+.addButton {
+  padding-bottom: 5px;
+}
+
+.tableStyle {
+
+}
 #select {
   width: 100px;
+  height: 25px;
 }
 
 #yoga-form {
   padding-bottom: 25px;
 }
-
+.submitButton {
+  text-align: center;
+  padding-top: 25px;
+}
 #submission {
-  margin-top: 15px;
+
 }
 
 #reload {
