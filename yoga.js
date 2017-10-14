@@ -9,7 +9,7 @@ $(function() {
 // when the user clicks submit...
   $("#submission").click(function() {
 // Add the selected time into the contents object
-    // contents.muscle = []-------------------------What is this here for? Clearing out array at very end of Submission function!
+    // contents.muscle = []---- Moved this to line 98
     contents.duration = $("#select").val();
     $("#summaryTable tr").remove();
     $("#confirm").remove();
