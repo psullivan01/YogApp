@@ -123,24 +123,3 @@ $(function() {
     console.log(contents.muscle);
   });
 });
-
-
-  //
-  // if ($("#inlineCheckbox1").is(":checked")) {
-  //   contents.muscle.push($("#inlineCheckbox1").attr('value'))
-  // }
-  // if ($("#inlineCheckbox2").is(":checked")) {
-  //   contents.muscle.push($("#inlineCheckbox2").attr('value'))
-  // }
-  // if ($("#inlineCheckbox3").is(":checked")) {
-  //   contents.muscle.push($("#inlineCheckbox3").attr('value'))
-  // }
-  // if ($("#inlineCheckbox4").is(":checked")) {
-  //   contents.muscle.push($("#inlineCheckbox4").attr('value'))
-  // }
-  // if ($("#inlineCheckbox5").is(":checked")) {
-  //   contents.muscle.push($("#inlineCheckbox5").attr('value'))
-  // }
-  // if ($("#inlineCheckbox6").is(":checked")) {
-  //   contents.muscle.push($("#inlineCheckbox6").attr('value'))
-  // }
