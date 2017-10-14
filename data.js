@@ -23,7 +23,7 @@ var links = {"Saddle" : 'img/saddle.png',
 "Seal" : 'img/seal.jpg',
 "Saddle Eagle" : 'img/saddle_eagle.jpg',
 "Cow Face" : 'img/cow_face.jpg',
-"Standing Forward Fold with Interlacing Fingers" : 'img/stading_forward_fold.jpg',
+"Standing Forward Fold with Interlacing Fingers" : 'img/standing_forward_fold.jpg',
 "Child's Pose with Shoulders" : 'img/childs_pose_shoulders.jpg',
 "Shoulder Opener" : 'img/shoulder_opener.jpg',
 "Thread the Needle" : 'img/thread_the_needle.jpg'}

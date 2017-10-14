@@ -57,7 +57,12 @@ nav a:hover {
   border: 0px;
 }
 .card-title {
+  padding-top: 5px;
   font-size: 20px;
+}
+
+.card-img-top{
+  padding-top: 15px;
 }
 .card-block {
 text-align: center;

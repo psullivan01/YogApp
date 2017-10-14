@@ -9,29 +9,13 @@ $(function() {
 // when the user clicks submit...
   $("#submission").click(function() {
 // Add the selected time into the contents object
-    contents.muscle = []
+    // contents.muscle = []-------------------------What is this here for? Clearing out array at very end of Submission function!
     contents.duration = $("#select").val();
     $("#summaryTable tr").remove();
     $("#confirm").remove();
-// Push the chosen workouts into the contents object
-    if ($("#inlineCheckbox1").is(":checked")) {
-      contents.muscle.push($("#inlineCheckbox1").attr('value'))
-    }
-    if ($("#inlineCheckbox2").is(":checked")) {
-      contents.muscle.push($("#inlineCheckbox2").attr('value'))
-    }
-    if ($("#inlineCheckbox3").is(":checked")) {
-      contents.muscle.push($("#inlineCheckbox3").attr('value'))
-    }
-    if ($("#inlineCheckbox4").is(":checked")) {
-      contents.muscle.push($("#inlineCheckbox4").attr('value'))
-    }
-    if ($("#inlineCheckbox5").is(":checked")) {
-      contents.muscle.push($("#inlineCheckbox5").attr('value'))
-    }
-    if ($("#inlineCheckbox6").is(":checked")) {
-      contents.muscle.push($("#inlineCheckbox6").attr('value'))
-    }
+
+
+
 
     console.log(contents);
 // Generate the workout options and duration for each
@@ -51,9 +35,9 @@ $(function() {
 // Populate table with summary info
     for (var i = -1; i < selection.pose.length; i++) {
       if (i === -1) {
-        $("#summaryTable").append("<thead><tr><th>Duration</th><th>Pose</th></tr></thead>");
+        $("#summaryTable").append("<thead><tr><th>Duration</th><th>Body Type</th><th>Pose</th></tr></thead>");
       } else {
-        $("#summaryTable").append("<tbody><tr><td>" + selection.time + " minutes</td><td>" + selection.pose[i] + "</td></tr></tbody>");
+        $("#summaryTable").append("<tbody><tr><td>" + selection.time + " minutes</td><td>" + contents.muscle[i] + "</td><td>" + selection.pose[i] + "</td></tr></tbody>");
       }
     }
 // Generate Acceptance Button
@@ -111,5 +95,52 @@ $(function() {
       displayPoses(selection.time, selection.pose);
 
     });
+    contents.muscle = []
+  });
+
+  $("#addButton1").click(function(){
+    contents.muscle.push($("#addButton1").attr('value'))
+    console.log(contents.muscle);
+  });
+  $("#addButton2").click(function(){
+    contents.muscle.push($("#addButton2").attr('value'))
+    console.log(contents.muscle);
+  });
+  $("#addButton3").click(function(){
+    contents.muscle.push($("#addButton3").attr('value'))
+    console.log(contents.muscle);
+  });
+  $("#addButton4").click(function(){
+    contents.muscle.push($("#addButton4").attr('value'))
+    console.log(contents.muscle);
+  });
+  $("#addButton5").click(function(){
+    contents.muscle.push($("#addButton5").attr('value'))
+    console.log(contents.muscle);
+  });
+  $("#addButton6").click(function(){
+    contents.muscle.push($("#addButton6").attr('value'))
+    console.log(contents.muscle);
   });
 });
+
+
+  //
+  // if ($("#inlineCheckbox1").is(":checked")) {
+  //   contents.muscle.push($("#inlineCheckbox1").attr('value'))
+  // }
+  // if ($("#inlineCheckbox2").is(":checked")) {
+  //   contents.muscle.push($("#inlineCheckbox2").attr('value'))
+  // }
+  // if ($("#inlineCheckbox3").is(":checked")) {
+  //   contents.muscle.push($("#inlineCheckbox3").attr('value'))
+  // }
+  // if ($("#inlineCheckbox4").is(":checked")) {
+  //   contents.muscle.push($("#inlineCheckbox4").attr('value'))
+  // }
+  // if ($("#inlineCheckbox5").is(":checked")) {
+  //   contents.muscle.push($("#inlineCheckbox5").attr('value'))
+  // }
+  // if ($("#inlineCheckbox6").is(":checked")) {
+  //   contents.muscle.push($("#inlineCheckbox6").attr('value'))
+  // }
