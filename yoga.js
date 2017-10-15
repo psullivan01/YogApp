@@ -1,6 +1,6 @@
 
-
 $(function() {
+
   $("#yoga-form").submit(function(e) {
     e.preventDefault();
   });
@@ -71,10 +71,12 @@ $(function() {
     }
 // Generate Acceptance Button
     $("#result").append("<button type='submit' class='btn btn-primary' id='confirm'>Continue</button>");
-
+// Run on Confirm click
     $("#confirm").click(function() {
       $("#topDiv").empty();
-      $("#topDiv").append("<button type='submit' class='btn btn-primary' id='reload'>Go Back</button>");
+      $('#reload').show();
+      $('#play').show();
+      $('#mute').show();
       $("#reload").click(function() {
         location.reload();
       });

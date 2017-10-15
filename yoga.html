@@ -4,12 +4,14 @@
     <meta charset="utf-8">
     <title>YogApp</title>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.5/esm/popper-utils.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     <script src="data.js"></script>
     <script src="yoga.js"></script>
+    <script src="yoga_youtube.js"></script>
     <link rel="stylesheet" type="text/css" href="yoga.css">
 
   </head>
@@ -26,8 +28,20 @@
     </header>
 
 <div class="row">
+
+    <div class="container" id="buttonRow">
+      <div class="row">
+
+        <button type='submit' class='btn btn-primary' id='reload'>Go Back</button>
+        <button type='submit' class='btn btn-primary' id='mute'>Mute</button>
+        <button type='submit' class='btn btn-primary' id='play'>Play</button>
+
+      </div>
+    </div>
+
     <div class="container" id="topDiv">
       <div class="row">
+
         <div class="col-lg-12">
           <form id="yoga-form">
             <div class="submitNav">
@@ -106,52 +120,7 @@
             <button type="submit" class="btn btn-primary" id="submission">Generate Workout</button>
           </div>
           </form>
-            <!-- <div class="card-columns" id="cards">
-    					<div class="card" style="width: 20rem;">
-    						<img class="card-img-top" src="https://i.pinimg.com/736x/97/ee/ac/97eeaced34adf236ac1313f3a8975c32--lower-body-workouts-leg-workouts.jpg" alt="Card image cap">
-    						  <div class="card-body">
-                    <div class="form-check form-check-inline">
-                      <label class="form-check-label">
-                        <h4 class="card-title">Quads</h4>
-                        <button type="button" class="btn btn-primary" id="addButton1">Add</button>
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="quads">
-                          <i class="fa fa-lock fa-3x" aria-hidden="false" id="inlineCheckbox1"></i>
-                      </label>
-                    </div>
-    						    <div class="badge badge-secondary float-right">Select Duration</div>
-                    <select class="form-control float-right" id="select">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>4</option>
-                      <option>6</option>
-                      <option>8</option>
-                      <option>10</option>
-                      <option>12</option>
-                      <option>14</option>
-                      <option>16</option>
-                      <option>18</option>
-                      <option>20</option>
-                    </select>
-                    <button type="submit" class="btn btn-primary" id="submission">Submit</button>
 
-    						  </div>
-    					</div>
-            </div> -->
-
-            <!-- <div class="form-group">
-              <label for="exampleSelect1">Select Total Duration (minutes)</label>
-              <select class="form-control" id="select">
-                <option>1</option>
-                <option>10</option>
-                <option>12</option>
-                <option>14</option>
-                <option>16</option>
-                <option>18</option>
-                <option>20</option>
-                <option>22</option>
-                <option>24</option>
-              </select>
-            </div> -->
 
             <div class="form-check form-check-inline">
               <label class="form-check-label">
@@ -193,9 +162,6 @@
           </form>
 
 
-
-
-
         </div>
         </div>
         <div class="row">
@@ -221,6 +187,10 @@
         <div class="row">
           <div id="poses">
           </div>
+        </div>
+
+        <div id="vid">
+          <iframe id="ytplayer" type="text/html" src="https://www.youtube.com/embed/ab0TSkLe-E0?controls=0&showinfo=0&rel=0&enablejsapi=1" frameborder="0" allowfullscreen></iframe>
         </div>
 
       </div>
