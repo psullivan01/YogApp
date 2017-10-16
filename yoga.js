@@ -56,7 +56,7 @@ $(function() {
       }
     }
 // Generate Acceptance Button
-    $("#result").append("<button type='submit' class='btn btn-primary' id='confirm'>Continue</button>");
+    $("#result").append("<button type='submit' class='btn btn-primary' id='confirm'>Begin Workout</button>");
 // Run on Confirm click
     $("#confirm").click(function() {
       $("#topDiv").empty();
@@ -122,6 +122,7 @@ $(function() {
         $("#addButton1").html("Remove")
         contents.muscle.push($("#addButton1").attr('value'))
         $("#addButton1").css('background-color', 'red')
+        $("#addButton1").css('border', '0')
       } else {
         $("#addButton1").html("Add")
         contents.muscle.splice($("#addButton1").attr('value'))
