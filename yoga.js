@@ -1,6 +1,6 @@
 
-
 $(function() {
+
   $("#yoga-form").submit(function(e) {
     e.preventDefault();
   });
@@ -19,8 +19,21 @@ $(function() {
 
     console.log(contents);
 // Generate the workout options and duration for each
-
     var poseTime = contents.duration / contents.muscle.length;
+// Convert minutes to mm:ss format
+    var poseMinutes = Math.floor(poseTime);
+    var poseSeconds = (poseTime * 60) % 60;
+// Add leading zero if length is 1
+    if (poseMinutes.toString().length === 1) {
+      poseMinutes = '0' + poseMinutes;
+    }
+    if (poseSeconds.toString().length === 1) {
+      poseSeconds = '0' + poseSeconds;
+    }
+
+    var totalPoseTime = poseMinutes + ":" + poseSeconds;
+    console.log(poseMinutes, poseSeconds);
+
     var selection = {time:poseTime, pose:[]}
 
     for (var i = 0; i < contents.muscle.length; i++) {
@@ -35,17 +48,21 @@ $(function() {
 // Populate table with summary info
     for (var i = -1; i < selection.pose.length; i++) {
       if (i === -1) {
+
         $("#summaryTable").append("<thead><tr><th>Duration</th><th>Body Type</th><th>Pose</th></tr></thead>");
       } else {
         $("#summaryTable").append("<tbody><tr><td>" + selection.time + " minutes</td><td>" + contents.muscle[i] + "</td><td>" + selection.pose[i] + "</td></tr></tbody>");
+
       }
     }
 // Generate Acceptance Button
     $("#result").append("<button type='submit' class='btn btn-primary' id='confirm'>Continue</button>");
-
+// Run on Confirm click
     $("#confirm").click(function() {
       $("#topDiv").empty();
-      $("#topDiv").append("<button type='submit' class='btn btn-primary' id='reload'>Go Back</button>");
+      $('#reload').show();
+      $('#play').show();
+      $('#mute').show();
       $("#reload").click(function() {
         location.reload();
       });

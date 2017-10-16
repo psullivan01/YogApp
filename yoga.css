@@ -92,5 +92,19 @@ text-align: center;
 }
 
 #reload {
-  margin-top: 25px;
+  display: none;
 }
+
+#ytplayer {
+  display: none;
+}
+
+ #mute {
+   margin-left: 10px;
+   display: none;
+ }
+
+ #play {
+   margin-left: 10px;
+   display: none;
+ }

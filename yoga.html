@@ -12,6 +12,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     <script src="data.js"></script>
     <script src="yoga.js"></script>
+    <script src="yoga_youtube.js"></script>
     <link rel="stylesheet" type="text/css" href="yoga.css">
 
   </head>
@@ -28,8 +29,20 @@
     </header>
 
 <div class="row">
+
+    <div class="container" id="buttonRow">
+      <div class="row">
+
+        <button type='submit' class='btn btn-primary' id='reload'>Go Back</button>
+        <button type='submit' class='btn btn-primary' id='mute'>Mute</button>
+        <button type='submit' class='btn btn-primary' id='play'>Play</button>
+
+      </div>
+    </div>
+
     <div class="container" id="topDiv">
       <div class="row">
+
         <div class="col-lg-12">
           <form id="yoga-form">
             <div class="submitNav">
@@ -135,6 +148,10 @@
         <div class="row">
           <div id="poses">
           </div>
+        </div>
+
+        <div id="vid">
+          <iframe id="ytplayer" type="text/html" src="https://www.youtube.com/embed/ab0TSkLe-E0?controls=0&showinfo=0&rel=0&enablejsapi=1" frameborder="0" allowfullscreen></iframe>
         </div>
 
       </div>
