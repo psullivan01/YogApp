@@ -1,4 +1,48 @@
 
+// Generate Timer
+function displayTime(totalSeconds) {
+  $("#time").empty();
+
+  var minutes = Math.floor(totalSeconds / 60);
+  var seconds = totalSeconds % 60;
+
+  if (seconds < 10) {
+    seconds = '0' + seconds;
+  }
+
+  $("#time").append(minutes + ":" + seconds);
+  totalSeconds--;
+
+  if (totalSeconds > 0) {
+    setTimeout(function() {
+      $("#time").empty();
+      displayTime(totalSeconds);
+    }, 1000);
+  }
+}
+
+// Display Poses on given interval
+function displayPoses(time, pose) {
+  var move = pose.pop();
+  var totalSeconds = time * 60;
+
+  console.log(links[move]);
+
+  $("#poses").append("<img class='img-responsive center-block' src='" + links[move] + "'></img>");
+  $("#move").append(move);
+
+  displayTime(totalSeconds);
+
+  if (pose.length) {
+    setTimeout(function() {
+      $("#poses").empty();
+      $("#move").empty();
+      displayPoses(time, pose);
+// set time in seconds plus getReady time (10 seconds)
+    }, (time * 60000) + 10000);
+  }
+}
+
 $(function() {
 
   $("#yoga-form").submit(function(e) {
@@ -80,48 +124,6 @@ $(function() {
       $("#reload").click(function() {
         location.reload();
       });
-
-      function displayTime(totalSeconds) {
-        $("#time").empty();
-
-        var minutes = Math.floor(totalSeconds / 60);
-        var seconds = totalSeconds % 60;
-
-        if (seconds < 10) {
-          seconds = '0' + seconds;
-        }
-
-        $("#time").append(minutes + ":" + seconds);
-        totalSeconds--;
-
-        if (totalSeconds > 0) {
-          setTimeout(function() {
-            $("#time").empty();
-            displayTime(totalSeconds);
-          }, 1000);
-        }
-      }
-
-// Display Poses on given interval
-      function displayPoses(time, pose) {
-        var move = pose.pop();
-        var totalSeconds = time * 60;
-
-        console.log(links[move]);
-
-        $("#poses").append("<img class='img-responsive center-block' src='" + links[move] + "'></img>");
-        $("#move").append(move);
-
-        displayTime(totalSeconds);
-
-        if (pose.length) {
-          setTimeout(function() {
-            $("#poses").empty();
-            $("#move").empty();
-            displayPoses(time, pose);
-          }, time * 60000);
-        }
-      }
 
       displayPoses(selection.time, selection.pose);
 
