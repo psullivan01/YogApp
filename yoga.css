@@ -2,7 +2,7 @@ body {
   /*background-color: #d8d8d8;*/
   width:100%;
   /*background-color: #EAEAEA;*/
-  font-family: Ayuthaya, ariel, sans-serif;
+  font-family: Nunito, ariel, sans-serif;
   background-image: url(http://sf.co.ua/2012/wallpaper-2077534.jpg);
 }
 
@@ -57,7 +57,12 @@ nav a:hover {
   border: 0px;
 }
 .card-title {
+  padding-top: 5px;
   font-size: 20px;
+}
+
+.card-img-top{
+  padding-top: 15px;
 }
 .card-block {
 text-align: center;
