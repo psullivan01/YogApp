@@ -122,6 +122,7 @@ $(function() {
         $("#addButton1").html("Remove")
         contents.muscle.push($("#addButton1").attr('value'))
         $("#addButton1").css('background-color', 'red')
+        $("#addButton1").css('border', '0')
       } else {
         $("#addButton1").html("Add")
         contents.muscle.splice($("#addButton1").attr('value'))
