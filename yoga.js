@@ -99,27 +99,83 @@ $(function() {
   });
 
   $("#addButton1").click(function(){
-    contents.muscle.push($("#addButton1").attr('value'))
+    // $("#addButton1").html("Remove")
+    var currentText = $("#addButton1").html()
+      if (currentText === "Add") {
+        $("#addButton1").html("Remove")
+        contents.muscle.push($("#addButton1").attr('value'))
+        $("#addButton1").css('background-color', 'red')
+      } else {
+        $("#addButton1").html("Add")
+        contents.muscle.splice($("#addButton1").attr('value'))
+        $("#addButton1").css('background-color', 'green')
+      }
+
     console.log(contents.muscle);
   });
   $("#addButton2").click(function(){
-    contents.muscle.push($("#addButton2").attr('value'))
+    var currentText = $("#addButton2").html()
+      if (currentText === "Add") {
+        $("#addButton2").html("Remove")
+        contents.muscle.push($("#addButton2").attr('value'))
+        $("#addButton2").css('background-color', 'red')
+      } else {
+        $("#addButton2").html("Add")
+        contents.muscle.splice($("#addButton2").attr('value'))
+        $("#addButton2").css('background-color', 'green')
+      }
     console.log(contents.muscle);
   });
   $("#addButton3").click(function(){
-    contents.muscle.push($("#addButton3").attr('value'))
+    var currentText = $("#addButton3").html()
+      if (currentText === "Add") {
+        $("#addButton3").html("Remove")
+        contents.muscle.push($("#addButton3").attr('value'))
+        $("#addButton3").css('background-color', 'red')
+      } else {
+        $("#addButton3").html("Add")
+        contents.muscle.splice($("#addButton3").attr('value'))
+        $("#addButton3").css('background-color', 'green')
+      }
     console.log(contents.muscle);
   });
   $("#addButton4").click(function(){
-    contents.muscle.push($("#addButton4").attr('value'))
+    var currentText = $("#addButton4").html()
+      if (currentText === "Add") {
+        $("#addButton4").html("Remove")
+        contents.muscle.push($("#addButton4").attr('value'))
+        $("#addButton4").css('background-color', 'red')
+      } else {
+        $("#addButton4").html("Add")
+        contents.muscle.splice($("#addButton4").attr('value'))
+        $("#addButton4").css('background-color', 'green')
+      }
     console.log(contents.muscle);
   });
   $("#addButton5").click(function(){
-    contents.muscle.push($("#addButton5").attr('value'))
+    var currentText = $("#addButton5").html()
+      if (currentText === "Add") {
+        $("#addButton5").html("Remove")
+        contents.muscle.push($("#addButton5").attr('value'))
+        $("#addButton5").css('background-color', 'red')
+      } else {
+        $("#addButton5").html("Add")
+        contents.muscle.splice($("#addButton5").attr('value'))
+        $("#addButton5").css('background-color', 'green')
+      }
     console.log(contents.muscle);
   });
   $("#addButton6").click(function(){
-    contents.muscle.push($("#addButton6").attr('value'))
+    var currentText = $("#addButton6").html()
+      if (currentText === "Add") {
+        $("#addButton6").html("Remove")
+        contents.muscle.push($("#addButton6").attr('value'))
+        $("#addButton6").css('background-color', 'red')
+      } else {
+        $("#addButton6").html("Add")
+        contents.muscle.splice($("#addButton6").attr('value'))
+        $("#addButton6").css('background-color', 'green')
+      }
     console.log(contents.muscle);
   });
 });
