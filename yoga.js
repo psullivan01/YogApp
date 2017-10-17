@@ -116,16 +116,22 @@ $(function() {
   });
 
   $("#addButton1").click(function(){
-    // $("#addButton1").html("Remove")
+    // Add / Remove button functionality
     var currentText = $("#addButton1").html()
       if (currentText === "Add") {
         $("#addButton1").html("Remove")
         contents.muscle.push($("#addButton1").attr('value'))
         $("#addButton1").css('background-color', 'red')
-        $("#addButton1").css('border', '0')
       } else {
         $("#addButton1").html("Add")
-        contents.muscle.splice($("#addButton1").attr('value'))
+        var removeVal = $("#addButton1").attr('value');
+        console.log(removeVal);
+        var removeValIndex = contents.muscle.indexOf(removeVal);
+        console.log(removeValIndex);
+        if (removeValIndex !== -1) {
+          contents.muscle.splice(removeValIndex, 1)
+        }
+        // contents.muscle.splice($("#addButton1").attr('value'))
         $("#addButton1").css('background-color', 'green')
       }
 
@@ -139,7 +145,14 @@ $(function() {
         $("#addButton2").css('background-color', 'red')
       } else {
         $("#addButton2").html("Add")
-        contents.muscle.splice($("#addButton2").attr('value'))
+        var removeVal = $("#addButton2").attr('value');
+        console.log(removeVal);
+        var removeValIndex = contents.muscle.indexOf(removeVal);
+        console.log(removeValIndex);
+        if (removeValIndex !== -1) {
+          contents.muscle.splice(removeValIndex, 1)
+        }
+        // contents.muscle.splice($("#addButton2").attr('value'))
         $("#addButton2").css('background-color', 'green')
       }
     console.log(contents.muscle);
@@ -152,7 +165,14 @@ $(function() {
         $("#addButton3").css('background-color', 'red')
       } else {
         $("#addButton3").html("Add")
-        contents.muscle.splice($("#addButton3").attr('value'))
+        var removeVal = $("#addButton3").attr('value');
+        console.log(removeVal);
+        var removeValIndex = contents.muscle.indexOf(removeVal);
+        console.log(removeValIndex);
+        if (removeValIndex !== -1) {
+          contents.muscle.splice(removeValIndex, 1)
+        }
+        // contents.muscle.splice($("#addButton3").attr('value'))
         $("#addButton3").css('background-color', 'green')
       }
     console.log(contents.muscle);
@@ -165,7 +185,13 @@ $(function() {
         $("#addButton4").css('background-color', 'red')
       } else {
         $("#addButton4").html("Add")
-        contents.muscle.splice($("#addButton4").attr('value'))
+        var removeVal = $("#addButton4").attr('value');
+        console.log(removeVal);
+        var removeValIndex = contents.muscle.indexOf(removeVal);
+        console.log(removeValIndex);
+        if (removeValIndex !== -1) {
+          contents.muscle.splice(removeValIndex, 1)
+        }
         $("#addButton4").css('background-color', 'green')
       }
     console.log(contents.muscle);
@@ -178,7 +204,13 @@ $(function() {
         $("#addButton5").css('background-color', 'red')
       } else {
         $("#addButton5").html("Add")
-        contents.muscle.splice($("#addButton5").attr('value'))
+        var removeVal = $("#addButton5").attr('value');
+        console.log(removeVal);
+        var removeValIndex = contents.muscle.indexOf(removeVal);
+        console.log(removeValIndex);
+        if (removeValIndex !== -1) {
+          contents.muscle.splice(removeValIndex, 1)
+        }
         $("#addButton5").css('background-color', 'green')
       }
     console.log(contents.muscle);
@@ -191,7 +223,13 @@ $(function() {
         $("#addButton6").css('background-color', 'red')
       } else {
         $("#addButton6").html("Add")
-        contents.muscle.splice($("#addButton6").attr('value'))
+        var removeVal = $("#addButton6").attr('value');
+        console.log(removeVal);
+        var removeValIndex = contents.muscle.indexOf(removeVal);
+        console.log(removeValIndex);
+        if (removeValIndex !== -1) {
+          contents.muscle.splice(removeValIndex, 1)
+        }
         $("#addButton6").css('background-color', 'green')
       }
     console.log(contents.muscle);
