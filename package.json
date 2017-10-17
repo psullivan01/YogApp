@@ -1,0 +1,25 @@
+{
+  "name": "yoga",
+  "version": "1.0.0",
+  "description": "yoga app group project 1",
+  "main": "yoga.js",
+  "scripts": {
+    "test": "echo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/psullivan01/YogApp.git"
+  },
+  "keywords": [
+    "yoga"
+  ],
+  "author": "patrick sullivan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/psullivan01/YogApp/issues"
+  },
+  "homepage": "https://github.com/psullivan01/YogApp#readme",
+  "dependencies": {
+    "underscore": "^1.8.3"
+  }
+}

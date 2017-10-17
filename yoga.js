@@ -14,9 +14,6 @@ $(function() {
     $("#summaryTable tr").remove();
     $("#confirm").remove();
 
-
-
-
     console.log(contents);
 // Generate the workout options and duration for each
     var poseTime = contents.duration / contents.muscle.length;
@@ -45,13 +42,16 @@ $(function() {
     }
 
     console.log(selection);
+
+    // var tableMinutes = Math.floor(selection.time / 60)
+    // var tableSeconds = (selection.time * 60) % 60
+
 // Populate table with summary info
     for (var i = -1; i < selection.pose.length; i++) {
       if (i === -1) {
-
         $("#summaryTable").append("<thead><tr><th>Duration</th><th>Body Type</th><th>Pose</th></tr></thead>");
       } else {
-        $("#summaryTable").append("<tbody><tr><td>" + selection.time + " minutes</td><td>" + contents.muscle[i] + "</td><td>" + selection.pose[i] + "</td></tr></tbody>");
+        $("#summaryTable").append("<tbody><tr><td>" + totalPoseTime + "</td><td>" + contents.muscle[i] + "</td><td>" + selection.pose[i] + "</td></tr></tbody>");
 
       }
     }
@@ -60,6 +60,7 @@ $(function() {
 // Run on Confirm click
     $("#confirm").click(function() {
       $("#topDiv").empty();
+      $("#topDiv").hide();
       $('#reload').show();
       $('#play').show();
       $('#mute').show();
