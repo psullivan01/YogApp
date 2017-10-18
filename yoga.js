@@ -10,6 +10,7 @@ $(function() {
   $("#submission").click(function() {
 // Add the selected time into the contents object
     // contents.muscle = []---- Moved this to line 98
+
     contents.duration = $("#select").val();
     $("#summaryTable tr").remove();
     $("#confirm").remove();
@@ -113,7 +114,7 @@ $(function() {
       displayPoses(selection.time, selection.pose);
 
     });
-    contents.muscle = []
+    // contents.muscle = []
   });
 
   $("#addButton1").click(function(){
@@ -125,12 +126,14 @@ $(function() {
         $("#addButton1").css('background-color', 'red')
       } else {
         $("#addButton1").html("Add")
-        contents.muscle.splice($("#addButton1").attr('value'))
         $("#addButton1").css('background-color', 'green')
+        var index = contents.muscle.indexOf($("#addButton1").attr('value'));
+        contents.muscle.splice(index, 1);
       }
 
     console.log(contents.muscle);
   });
+
   $("#addButton2").click(function(){
     var currentText = $("#addButton2").html()
       if (currentText === "Add") {
@@ -139,11 +142,13 @@ $(function() {
         $("#addButton2").css('background-color', 'red')
       } else {
         $("#addButton2").html("Add")
-        contents.muscle.splice($("#addButton2").attr('value'))
         $("#addButton2").css('background-color', 'green')
+        var index = contents.muscle.indexOf($("#addButton1").attr('value'));
+        contents.muscle.splice(index, 1);
       }
     console.log(contents.muscle);
   });
+
   $("#addButton3").click(function(){
     var currentText = $("#addButton3").html()
       if (currentText === "Add") {
@@ -152,11 +157,13 @@ $(function() {
         $("#addButton3").css('background-color', 'red')
       } else {
         $("#addButton3").html("Add")
-        contents.muscle.splice($("#addButton3").attr('value'))
         $("#addButton3").css('background-color', 'green')
+        var index = contents.muscle.indexOf($("#addButton1").attr('value'));
+        contents.muscle.splice(index, 1);
       }
     console.log(contents.muscle);
   });
+
   $("#addButton4").click(function(){
     var currentText = $("#addButton4").html()
       if (currentText === "Add") {
@@ -165,11 +172,13 @@ $(function() {
         $("#addButton4").css('background-color', 'red')
       } else {
         $("#addButton4").html("Add")
-        contents.muscle.splice($("#addButton4").attr('value'))
         $("#addButton4").css('background-color', 'green')
+        var index = contents.muscle.indexOf($("#addButton1").attr('value'));
+        contents.muscle.splice(index, 1);
       }
     console.log(contents.muscle);
   });
+
   $("#addButton5").click(function(){
     var currentText = $("#addButton5").html()
       if (currentText === "Add") {
@@ -178,11 +187,13 @@ $(function() {
         $("#addButton5").css('background-color', 'red')
       } else {
         $("#addButton5").html("Add")
-        contents.muscle.splice($("#addButton5").attr('value'))
         $("#addButton5").css('background-color', 'green')
+        var index = contents.muscle.indexOf($("#addButton1").attr('value'));
+        contents.muscle.splice(index, 1);
       }
     console.log(contents.muscle);
   });
+
   $("#addButton6").click(function(){
     var currentText = $("#addButton6").html()
       if (currentText === "Add") {
@@ -191,8 +202,9 @@ $(function() {
         $("#addButton6").css('background-color', 'red')
       } else {
         $("#addButton6").html("Add")
-        contents.muscle.splice($("#addButton6").attr('value'))
         $("#addButton6").css('background-color', 'green')
+        var index = contents.muscle.indexOf($("#addButton1").attr('value'));
+        contents.muscle.splice(index, 1);
       }
     console.log(contents.muscle);
   });
