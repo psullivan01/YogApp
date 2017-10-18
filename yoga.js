@@ -10,12 +10,10 @@ $(function() {
   $("#submission").click(function() {
 // Add the selected time into the contents object
     // contents.muscle = []---- Moved this to line 98
+
     contents.duration = $("#select").val();
     $("#summaryTable tr").remove();
     $("#confirm").remove();
-
-
-
 
     console.log(contents);
 // Generate the workout options and duration for each
@@ -45,13 +43,16 @@ $(function() {
     }
 
     console.log(selection);
+
+    // var tableMinutes = Math.floor(selection.time / 60)
+    // var tableSeconds = (selection.time * 60) % 60
+
 // Populate table with summary info
     for (var i = -1; i < selection.pose.length; i++) {
       if (i === -1) {
-
         $("#summaryTable").append("<thead><tr><th>Duration</th><th>Body Type</th><th>Pose</th></tr></thead>");
       } else {
-        $("#summaryTable").append("<tbody><tr><td>" + selection.time + " minutes</td><td>" + contents.muscle[i] + "</td><td>" + selection.pose[i] + "</td></tr></tbody>");
+        $("#summaryTable").append("<tbody><tr><td>" + totalPoseTime + "</td><td>" + contents.muscle[i] + "</td><td>" + selection.pose[i] + "</td></tr></tbody>");
 
       }
     }
@@ -60,6 +61,7 @@ $(function() {
 // Run on Confirm click
     $("#confirm").click(function() {
       $("#topDiv").empty();
+      $("#topDiv").hide();
       $('#reload').show();
       $('#play').show();
       $('#mute').show();
@@ -112,7 +114,7 @@ $(function() {
       displayPoses(selection.time, selection.pose);
 
     });
-    contents.muscle = []
+    // contents.muscle = []
   });
 
   $("#addButton1").click(function(){
@@ -124,19 +126,14 @@ $(function() {
         $("#addButton1").css('background-color', 'red')
       } else {
         $("#addButton1").html("Add")
-        var removeVal = $("#addButton1").attr('value');
-        console.log(removeVal);
-        var removeValIndex = contents.muscle.indexOf(removeVal);
-        console.log(removeValIndex);
-        if (removeValIndex !== -1) {
-          contents.muscle.splice(removeValIndex, 1)
-        }
-        // contents.muscle.splice($("#addButton1").attr('value'))
         $("#addButton1").css('background-color', 'green')
+        var index = contents.muscle.indexOf($("#addButton1").attr('value'));
+        contents.muscle.splice(index, 1);
       }
 
     console.log(contents.muscle);
   });
+
   $("#addButton2").click(function(){
     var currentText = $("#addButton2").html()
       if (currentText === "Add") {
@@ -145,18 +142,13 @@ $(function() {
         $("#addButton2").css('background-color', 'red')
       } else {
         $("#addButton2").html("Add")
-        var removeVal = $("#addButton2").attr('value');
-        console.log(removeVal);
-        var removeValIndex = contents.muscle.indexOf(removeVal);
-        console.log(removeValIndex);
-        if (removeValIndex !== -1) {
-          contents.muscle.splice(removeValIndex, 1)
-        }
-        // contents.muscle.splice($("#addButton2").attr('value'))
         $("#addButton2").css('background-color', 'green')
+        var index = contents.muscle.indexOf($("#addButton1").attr('value'));
+        contents.muscle.splice(index, 1);
       }
     console.log(contents.muscle);
   });
+
   $("#addButton3").click(function(){
     var currentText = $("#addButton3").html()
       if (currentText === "Add") {
@@ -165,18 +157,13 @@ $(function() {
         $("#addButton3").css('background-color', 'red')
       } else {
         $("#addButton3").html("Add")
-        var removeVal = $("#addButton3").attr('value');
-        console.log(removeVal);
-        var removeValIndex = contents.muscle.indexOf(removeVal);
-        console.log(removeValIndex);
-        if (removeValIndex !== -1) {
-          contents.muscle.splice(removeValIndex, 1)
-        }
-        // contents.muscle.splice($("#addButton3").attr('value'))
         $("#addButton3").css('background-color', 'green')
+        var index = contents.muscle.indexOf($("#addButton1").attr('value'));
+        contents.muscle.splice(index, 1);
       }
     console.log(contents.muscle);
   });
+
   $("#addButton4").click(function(){
     var currentText = $("#addButton4").html()
       if (currentText === "Add") {
@@ -185,17 +172,13 @@ $(function() {
         $("#addButton4").css('background-color', 'red')
       } else {
         $("#addButton4").html("Add")
-        var removeVal = $("#addButton4").attr('value');
-        console.log(removeVal);
-        var removeValIndex = contents.muscle.indexOf(removeVal);
-        console.log(removeValIndex);
-        if (removeValIndex !== -1) {
-          contents.muscle.splice(removeValIndex, 1)
-        }
         $("#addButton4").css('background-color', 'green')
+        var index = contents.muscle.indexOf($("#addButton1").attr('value'));
+        contents.muscle.splice(index, 1);
       }
     console.log(contents.muscle);
   });
+
   $("#addButton5").click(function(){
     var currentText = $("#addButton5").html()
       if (currentText === "Add") {
@@ -204,17 +187,13 @@ $(function() {
         $("#addButton5").css('background-color', 'red')
       } else {
         $("#addButton5").html("Add")
-        var removeVal = $("#addButton5").attr('value');
-        console.log(removeVal);
-        var removeValIndex = contents.muscle.indexOf(removeVal);
-        console.log(removeValIndex);
-        if (removeValIndex !== -1) {
-          contents.muscle.splice(removeValIndex, 1)
-        }
         $("#addButton5").css('background-color', 'green')
+        var index = contents.muscle.indexOf($("#addButton1").attr('value'));
+        contents.muscle.splice(index, 1);
       }
     console.log(contents.muscle);
   });
+
   $("#addButton6").click(function(){
     var currentText = $("#addButton6").html()
       if (currentText === "Add") {
@@ -223,14 +202,9 @@ $(function() {
         $("#addButton6").css('background-color', 'red')
       } else {
         $("#addButton6").html("Add")
-        var removeVal = $("#addButton6").attr('value');
-        console.log(removeVal);
-        var removeValIndex = contents.muscle.indexOf(removeVal);
-        console.log(removeValIndex);
-        if (removeValIndex !== -1) {
-          contents.muscle.splice(removeValIndex, 1)
-        }
         $("#addButton6").css('background-color', 'green')
+        var index = contents.muscle.indexOf($("#addButton1").attr('value'));
+        contents.muscle.splice(index, 1);
       }
     console.log(contents.muscle);
   });

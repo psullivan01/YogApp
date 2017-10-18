@@ -116,3 +116,8 @@ text-align: center;
    margin-left: 10px;
    display: none;
  }
+
+ #timer, #poses {
+   margin: auto;
+   width: 50%;
+ }
