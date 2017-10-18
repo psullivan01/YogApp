@@ -57,7 +57,7 @@ $(function() {
       }
     }
 // Generate Acceptance Button
-    $("#result").append("<button type='submit' class='btn btn-primary' id='confirm'>Continue</button>");
+    $("#result").append("<button type='submit' class='btn btn-primary' id='confirm'>Begin Workout</button>");
 // Run on Confirm click
     $("#confirm").click(function() {
       $("#topDiv").empty();
@@ -118,7 +118,7 @@ $(function() {
   });
 
   $("#addButton1").click(function(){
-    // $("#addButton1").html("Remove")
+    // Add / Remove button functionality
     var currentText = $("#addButton1").html()
       if (currentText === "Add") {
         $("#addButton1").html("Remove")
